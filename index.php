@@ -3,8 +3,5 @@
 <hr>
 
 <?php
-
-    
-    echo "Hello Word";
-
+    echo "Hello ABC Company";
 ?>
