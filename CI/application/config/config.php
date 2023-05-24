@@ -25,10 +25,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 if($_SERVER['HTTP_HOST'] == "myshopping.local")
 {
-    $config['base_url'] = 'http://myshopping.local/index.php/';
+    $config['base_url'] = 'http://myshopping.local/';
 }else
 {
-    $config['base_url'] = 'http://myshopping.com.my/index.php/';
+    $config['base_url'] = 'http://myshopping.com.my/';
 }
 
 /*
