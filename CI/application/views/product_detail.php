@@ -79,19 +79,22 @@
 											<li class="facebook"><a target="_blank" href="http://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
 										</ul>
 									</div>
+
+									<form method="POST" action="<?=base_url('addcart')?>" role="form" class="clearfix">
 									<div class="row grid-space-10">
-										<form role="form" class="clearfix">
 											<div class="col-md-4">
 												<div class="form-group">
 													<label>Quantity</label>
-													<input type="text" class="form-control" value="1">
+													<input name="qty" type="text" class="form-control" value="1">
+													<input name="product_id" type="hidden" value="<?=$productData['id']?>">
+													
 												</div>
 											</div>
 											
 											<div class="col-md-12 text-right">
 												
 											</div>
-										</form>
+										
 									</div>
 									<div class="light-gray-bg p-20 bordered clearfix">
 										<span class="product price"><i class="icon-tag pr-10"></i><?=$productData['price']?></span>
@@ -99,6 +102,7 @@
 											<input type="submit" value="Add to Cart" class="margin-clear btn btn-default">
 										</div>
 									</div>
+									</form>
 								</div>
 							</div>
 						</div>

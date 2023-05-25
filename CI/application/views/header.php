@@ -544,7 +544,7 @@
 														</ul>
 													</div>
 													<div class="btn-group dropdown">
-														<button type="button" class="btn dropdown-toggle" data-toggle="dropdown"><i class="icon-basket-1"></i><span class="cart-count default-bg">8</span></button>
+														<button type="button" class="btn dropdown-toggle" data-toggle="dropdown"><i class="icon-basket-1"></i><span class="cart-count default-bg"><?=$cartTotal?></span></button>
 														<ul class="dropdown-menu dropdown-menu-right dropdown-animation cart">
 															<li>
 																<table class="table table-hover">
@@ -556,24 +556,29 @@
 																		</tr>
 																	</thead>
 																	<tbody>
+																		<?php
+																		$total_amount=0;
+																		if(!empty($cartList)){
+
+																			
+
+																			foreach($cartList as $v){
+																		?>
 																		<tr>
-																			<td class="quantity">2 x</td>
-																			<td class="product"><a href="shop-product.html">Android 4.4 Smartphone</a><span class="small">4.7" Dual Core 1GB</span></td>
-																			<td class="amount">$199.00</td>
+																			<td class="quantity"><?=$v['qty']?></td>
+																			<td class="product"><a href="shop-product.html"><?=$v['product_title']?></a></td>
+																			<td class="amount"><?=$v['product_price']*$v['qty']?></td>
 																		</tr>
+																		<?php
+
+																				$total_amount += $v['product_price']*$v['qty'];
+																			}
+																		}
+																			?>
+																	
 																		<tr>
-																			<td class="quantity">3 x</td>
-																			<td class="product"><a href="shop-product.html">Android 4.2 Tablet</a><span class="small">7.3" Quad Core 2GB</span></td>
-																			<td class="amount">$299.00</td>
-																		</tr>
-																		<tr>
-																			<td class="quantity">3 x</td>
-																			<td class="product"><a href="shop-product.html">Desktop PC</a><span class="small">Quad Core 3.2MHz, 8GB RAM, 1TB Hard Disk</span></td>
-																			<td class="amount">$1499.00</td>
-																		</tr>
-																		<tr>
-																			<td class="total-quantity" colspan="2">Total 8 Items</td>
-																			<td class="total-amount">$1997.00</td>
+																			<td class="total-quantity" colspan="2">Total <?=$cartTotal?> Items</td>
+																			<td class="total-amount">$<?=$total_amount?></td>
 																		</tr>
 																	</tbody>
 																</table>
