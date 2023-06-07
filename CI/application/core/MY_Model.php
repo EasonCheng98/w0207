@@ -18,6 +18,14 @@
             return $row['total'];
         }
 
+        public function fetch($where=array(), $limit,$start){
+            $this->db->where($where);
+            $this->db->limit($limit,$start);
+            $query = $this->db->get($this->tablename);
+            return $query->result_array();
+
+        }
+
         public function getOne($where=array())
         {
             $this->db->select("*");

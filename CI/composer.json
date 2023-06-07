@@ -11,7 +11,11 @@
 		"source": "https://github.com/bcit-ci/CodeIgniter"
 	},
 	"require": {
-		"php": ">=5.3.7"
+		"php": ">=5.3.7",
+		"mailgun/mailgun-php": "^2.5",
+		"php-http/guzzle6-adapter": "^1.1",
+		"php-http/message": "^1.6",
+		"google/apiclient": "^2.4"
 	},
 	"suggest": {
 		"paragonie/random_compat": "Provides better randomness in PHP 5.x"
@@ -31,5 +35,10 @@
 	"require-dev": {
 		"mikey179/vfsstream": "1.6.*",
 		"phpunit/phpunit": "4.* || 5.* || 9.*"
+	},
+	"config": {
+		"allow-plugins": {
+			"php-http/discovery": true
+		}
 	}
 }
